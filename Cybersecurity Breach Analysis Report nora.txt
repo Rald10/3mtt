@@ -1,0 +1,28 @@
+Cybersecurity Breach Analysis Report
+
+Objective: This report analyzes the Equifax data breach (2017), assessing its impact, vulnerabilities exploited, and lessons learned to help ShieldGuard strengthen its cybersecurity defenses.
+1.	Overview of the Breach
+Organization: Equifax, a major credit reporting agency
+Timeline: The breach occurred between mid-May and July 2017 but was publicly disclosed in September 2017.
+Cause: Attackers exploited vulnerability in the Apache Struts web application framework, gaining unauthorized access to sensitive data.
+2. Impact Analysis
+•	Financial Impact: Equifax faced significant financial losses, including a $700 million settlement with regulators and lawsuits. The company also incurred costs for security improvements and credit monitoring services.
+•	Reputational Damage: Public trust declined due to mishandling of sensitive personal data. Equifax faced widespread criticism and loss of consumer confidence.
+•	Operational Consequences: The Company experienced internal disruptions, legal scrutiny, and increased regulatory oversight.
+3. Lessons Learned
+•	Vulnerabilities Exploited: Failure to patch known software vulnerabilities in a timely manner.
+•	Preventive Measures: Regular security updates, improved vulnerability scanning, and stronger access controls should have been implemented.
+•	Post-Breach Actions: Equifax enhanced its cyber security infrastructure, increased transparency in data protection, and introduced stricter regulatory compliance measures.
+4. ShieldGuard’s Takeaway
+•	Applying Lessons to Operations: ShieldGuard should prioritize timely security patches and software updates to prevent similar breaches.
+•	Actionable Recommendations:
+1.	Implement an automated patch management system to address vulnerabilities promptly.
+2.	Conduct regular penetration testing and security audits to identify weaknesses.
+3.	Strengthen encryption and access control mechanisms to protect sensitive data.
+By analyzing real-world breaches like Equifax, ShieldGuard can proactively enhance its cybersecurity defenses and mitigate future risks.
+
+Prepared by: Nora Godwin Teneke
+Breach Selected: Equifax Data Breach (2017)
+FE/24/6475710187
+
+
