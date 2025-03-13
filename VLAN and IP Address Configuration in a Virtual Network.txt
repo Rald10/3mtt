@@ -1,0 +1,95 @@
+VLAN and IP Address Configuration in a Virtual Network 
+Objective: The objective of this project is to configure IP addresses and VLANs in a virtual network environment to enhance network organization, security, and performance. By implementing VLAN segmentation and inter-VLAN routing, the network will ensure proper traffic management and improved efficiency.
+
+Step 1: Network Design and Planning
+Before configuring the network, I will design a topology with the following components:
+•	1 Layer 3 Switch (for inter-VLAN routing)
+•	6 End Devices (3 devices per VLAN)
+•	2 VLANs 
+o	VLAN 10 → Admin_Traffic
+o	VLAN 20 → Guest_Traffic
+________________________________________
+Step 2: Network Setup in Cisco Packet Tracer
+1.	Launch Cisco Packet Tracer
+2.	Add Network Devices 
+o	Drag and drop the following devices into the workspace: 
+	1 Layer 3 Switch
+	6 PCs
+	Appropriate cables (Copper Straight-through for switch-to-PC, Copper Cross-over if needed for switch-to-switch connections)
+3.	Connect Devices 
+o	Connect 3 PCs to switch ports assigned to VLAN 10
+o	Connect 3 PCs to switch ports assigned to VLAN 20
+________________________________________
+Step 3: Configure VLANs on the Layer 3 Switch
+1.	Access the Switch CLI
+o	Click on the switch and go to the CLI tab.
+o	Enter privileged mode: 
+enable
+o	Enter global configuration mode: 
+configure terminal
+2.	Create VLANs and Assign Names
+vlan 10
+name Admin_Traffic
+
+vlan 20
+name Guest_Traffic
+3.	Assign Switch Ports to VLANs
+o	Assign ports FastEthernet 0/1, 0/2, and 0/3 to VLAN 10:
+interface FastEthernet0/1
+switchport mode access
+switchport access vlan 10
+
+interface FastEthernet0/2
+switchport mode access
+switchport access vlan 10
+
+interface FastEthernet0/3
+switchport mode access
+switchport access vlan 10
+o	Assign ports FastEthernet 0/4, 0/5, and 0/6 to VLAN 20:
+interface FastEthernet0/4
+switchport mode access
+switchport access vlan 20
+
+interface FastEthernet0/5
+switchport mode access
+switchport access vlan 20
+
+interface FastEthernet0/6
+switchport mode access
+switchport access vlan 20
+________________________________________
+Step 4: Configure Inter-VLAN Routing
+Since we are using a Layer 3 switch, we need to enable routing between VLANs.
+1.	Enable Routing on the Switch 
+interface vlan 10
+ip address 192.168.10.1 255.255.255.0
+no shutdown
+
+interface vlan 20
+ip address 192.168.20.1 255.255.255.0
+no shutdown
+
+ip routing
+________________________________________
+Step 5: Configure IP Addresses on End Devices
+1.	On PC1, PC2, and PC3 (VLAN 10 - Admin Traffic)
+o	IP Address: 192.168.10.2 / 192.168.10.3 / 192.168.10.4
+o	Subnet Mask: 255.255.255.0
+o	Gateway: 192.168.10.1
+2.	On PC4, PC5, and PC6 (VLAN 20 - Guest Traffic)
+o	IP Address: 192.168.20.2 / 192.168.20.3 / 192.168.20.4
+o	Subnet Mask: 255.255.255.0
+o	Gateway: 192.168.20.1
+________________________________________
+Step 6: Verify Configuration
+1.	Ping Devices within the Same VLAN
+o	From PC1, ping PC2 (ping 192.168.10.3) → should be successful.
+o	From PC4, ping PC5 (ping 192.168.20.3) → should be successful.
+2.	Ping Devices Across VLANs (Inter-VLAN Routing Test)
+o	From PC1 (192.168.10.2), ping PC4 (192.168.20.2) → should be successful if inter-VLAN routing is working.
+3.	Use Traceroute to Analyze Traffic Flow
+o	Run tracert 192.168.20.2 from PC1 to confirm routing path.
+Conclusion
+This project successfully demonstrates the configuration of VLANs, IP addressing, and inter-VLAN routing, ensuring proper network segmentation and communication between VLANs.
+
